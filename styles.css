@@ -1,0 +1,161 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images.jfif') no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.stopwatch-container {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05); 
+  left: 5%;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5); 
+  animation: fadeIn 1s ease-in-out; 
+  background: linear-gradient(135deg, #1e1e2f 0%, #2a2a4a 100%);
+}
+
+/* Heading */
+h1 {
+  color: #f0f0f5; 
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Time Display */
+#display {
+  font-size: 60px;
+  font-family: 'Orbitron', sans-serif;
+  color: #00ffcc;
+  margin: 20px 0;
+  text-shadow: 0 0 15px #00ffcc, 0 0 30px #00ffcc;
+  transition: all 0.3s ease;
+}
+
+#display:hover {
+  transform: scale(1.05);
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.controls button {
+  padding: 12px 25px;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 50px; 
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.3s ease; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Styles */
+#startPause {
+  background: linear-gradient(45deg, #00ffcc, #00b4d8); 
+}
+
+#startPause:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 0 20px #00ffcc; 
+}
+
+#reset {
+  background: linear-gradient(45deg, #ff0066, #ff4d8a); 
+}
+
+#reset:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #ff0066;
+}
+
+#lap {
+  background: linear-gradient(45deg, #ffd700, #ffaa00); /* Gold gradient */
+}
+
+#lap:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #ffd700;
+}
+
+/* Lap List */
+#laps {
+  list-style: none;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 20px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+}
+
+#laps li {
+  color: #d4d4ff; /* Light purple text */
+  font-size: 16px;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  animation: slideIn 0.5s ease; /* Slide-in effect for laps */
+}
+
+/* Scrollbar Styling */
+#laps::-webkit-scrollbar {
+  width: 8px;
+}
+
+#laps::-webkit-scrollbar-thumb {
+  background: #00ffcc;
+  border-radius: 10px;
+}
+
+#laps::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Extra small screens (below 480px) */
+@media (max-width: 480px) {
+  #display {
+      font-size: 36px; /* Bigger for small screens */
+  }
+  .controls button {
+      padding: 8px 16px; /* Adjust button size */
+      font-size: 14px;
+  }
+}
